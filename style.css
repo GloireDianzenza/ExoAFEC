@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    min-width: 100vw;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    min-width: calc(300px * 3);
+    width: 100%;
+    max-height: calc(320px + 480px + calc(20px * 3));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.carte{
+    position: relative;
+    width: calc(100%);
+    min-height: 320px;
+    max-width: 480px;
+    /* background-color: red; */
+    border-radius: 5px;
+    border-bottom-left-radius: 80px;
+
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+.carte:nth-child(1){
+    height: 480px !important;
+    background-image: url(images/AssistantdeVie.jpg);
+}
+.carte:nth-child(4){
+    height: 480px !important;
+    background-image: url(images/MedicoSocial.jpg);
+}
+.carte:nth-child(5){
+    height: 480px !important;
+    background-image: url(images/RessourcesHumaines.jpg);
+}
+.carte:nth-child(2){
+    height: 320px !important;
+    background-image: url(images/GestionPaie.jpg);
+}
+.carte:nth-child(3){
+    height: 320px !important;
+    background-image: url(images/PetiteEnfance.jpg);
+}
+.carte:nth-child(6){
+    height: 320px !important;
+    background-image: url(images/Comptable.jpg);
+}
+
+.carte::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 128, 0.3);
+    z-index: 3;
+}
+
+.carte .infos{
+    position: relative;
+    color: white;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    padding-bottom: 40px;
+}
+
+.infos strong{
+    background-color: orange;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    font-size: 0.8rem;
+}
+
+.infos h2{
+    font-size: 1.3rem;
+}
+
+.infos > div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.infos span{
+    font-size: 1.2em;
+}
+
+@media screen and (max-width:1050px) {
+    .container{
+        max-height: none;
+        width: 100%;
+        flex-wrap: nowrap;
+        min-width: 100% !important;
+    }
+
+    .carte{
+        max-width: none !important;
+        width: 100% !important;
+        height: 480px !important;
+    }
+
+    .carte:nth-child(2){
+        height: 480px !important;
+    }
+    .carte:nth-child(3){
+        height: 480px !important;
+    }
+    .carte:nth-child(6){
+        height: 480px !important;
+    }
+}
