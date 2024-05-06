@@ -41,6 +41,11 @@ body{
     transition: all 0.3s;
 }
 
+.carte:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
 .carte:nth-child(1){
     height: 480px !important;
     background-image: url(images/AssistantdeVie.jpg);
